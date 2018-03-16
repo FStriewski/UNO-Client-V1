@@ -7,6 +7,24 @@
     width: 100px;
     margin: 1%;
     z-index: 5;
-    
-    background-color: white;
+  }
+
+  .Card.fill-red {
+    background-color: #D0021B;
+  }
+  
+  .Card.fill-green{
+    background-color: green;
+  }
+  
+  .Card.fill-yellow {
+    background-color: yellow;
+  }
+  
+  .Card.fill-blue{
+    background-color: #2F619B;
+  }
+
+  .Card.fill-black{
+    background-color: black;
   }
