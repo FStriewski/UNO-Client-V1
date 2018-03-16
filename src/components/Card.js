@@ -10,7 +10,7 @@ class Card extends PureComponent {
 
 
   handleClick = () => {
-      alert("clicked!")
+      alert("clicked!" )
     // if location === x, dispatch action y
  }
 

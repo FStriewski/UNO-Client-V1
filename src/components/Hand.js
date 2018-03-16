@@ -34,11 +34,18 @@ let initialState = [
     },
 
     {id: 25,
-     color: "black",
-     value: null,
+     color: "green",
+     value: 5,
      plus: null,
      location: "Deck"
-       }
+    },
+
+    {id: 5,
+     color: "yellow",
+     value: 8,
+     plus: null,
+     location: "CurrentCard"
+    }
 ]
 
 class Hand extends PureComponent {
