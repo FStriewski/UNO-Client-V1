@@ -7,31 +7,38 @@ import '../style/Hand.css'
 let initialState = [
     {id: 20,
      color: "green",
-     value: 1,
+     value: 6,
      plus: 0,
-     location: "Board"
+     location: "Hand"
     } , 
 
     {id: 0,
      color: "red",
-     value: 1,
+     value: 8,
      plus: 0,
-     location: "Deck"
+     location: "Hand"
     },
 
     {id: 1,
      color: "blue",
      value: null,
      plus: 2,
-     location: "Deck"
+     location: "Hand"
     },
 
     {id: 5,
      color: "blue",
      value: 3,
      plus: null,
+     location: "Hand"
+    },
+
+    {id: 25,
+     color: "black",
+     value: null,
+     plus: null,
      location: "Deck"
-    }
+       }
 ]
 
 class Hand extends PureComponent {
@@ -42,12 +49,9 @@ class Hand extends PureComponent {
     // Map an array of player cards
     return (
         <div className="Hand" style={{display:"flex", flexDirection: 'row'}}>
-            
-  
-            {initialState.map( (card, index) => <Card key={index} color={card.color}    />)}
-            {/* <Card/>
-            <Card/>
-            <Card/> */}
+            {initialState
+                .filter(card => card.location === "Hand")
+                .map( (card, index) => <Card key={index} color={card.color} number={card.value}   />)}
         </div>
     )
   }

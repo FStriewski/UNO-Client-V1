@@ -14,16 +14,13 @@ class Card extends PureComponent {
     // if location === x, dispatch action y
  }
 
- style = () => {
-    {backgroundColor: `${this.props.deck.color}`}
- }
-
 
  classNames() {
     const { number, color } = this.props
  
     let classnames = ['Card']
-    classnames.push(`fill-${color || "black"}`)
+    classnames.push(`fill-${color}`)
+    classnames.push(number)
     return classnames.join(' ')
   }
  
@@ -31,7 +28,7 @@ class Card extends PureComponent {
   render() {
     return (
         <div className={this.classNames()} id={this.props.deck.id}  onClick={this.handleClick} >
-            Card
+            <p style={{fontSize: "20px"}}>{this.props.number} </p>
         </div>
     )
   }
