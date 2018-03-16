@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
+import '../style/CurrentCard.css'
 
 class CurrentCard extends PureComponent {
   static propTypes = {
@@ -9,7 +10,7 @@ class CurrentCard extends PureComponent {
 
     return (
         <div className="CurrentCard">
-
+            CurrentCard
         </div>
     )
   }

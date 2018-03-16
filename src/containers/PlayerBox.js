@@ -1,18 +1,19 @@
 import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
+import '../style/PlayerBox.css'
 
-class Player extends PureComponent {
+class PlayerBox extends PureComponent {
   static propTypes = {
   }
 
   render() {
 
     return (
-        <div className="Player">
-
+        <div className="PlayerBox" id="">
+          test
         </div>
     )
   }
 }
 
-export default Player
+export default PlayerBox

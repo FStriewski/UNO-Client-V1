@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
+import '../style/Deck.css'
 
 class Deck extends PureComponent {
   static propTypes = {
@@ -9,7 +10,7 @@ class Deck extends PureComponent {
 
     return (
         <div className="Deck">
-
+            Deck
         </div>
     )
   }
