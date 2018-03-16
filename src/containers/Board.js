@@ -1,18 +1,18 @@
 import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 
-class Deck extends PureComponent {
+class Board extends PureComponent {
   static propTypes = {
   }
 
   render() {
 
     return (
-        <div className="Deck">
+        <div className="Board">
 
         </div>
     )
   }
 }
 
-export default Deck
+export default Board
