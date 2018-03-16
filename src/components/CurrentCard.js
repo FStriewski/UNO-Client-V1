@@ -6,10 +6,15 @@ class CurrentCard extends PureComponent {
   static propTypes = {
   }
 
+  handleClick = () => {
+      // if Board to PlayerHand
+      // if PlayerHand: to Deck
+  }
+
   render() {
 
     return (
-        <div className="CurrentCard">
+        <div className="CurrentCard" onClick={this.handleClick}>
             CurrentCard
         </div>
     )

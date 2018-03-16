@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
+import Card from './Card'
 import '../style/Hand.css'
 
 class Hand extends PureComponent {
@@ -9,8 +10,11 @@ class Hand extends PureComponent {
   render() {
     // Map an array of player cards
     return (
-        <div className="Hand">
+        <div className="Hand" style={{display:"flex", flexDirection: 'row'}}>
             Hand
+            <Card/>
+            <Card/>
+            <Card/>
         </div>
     )
   }
