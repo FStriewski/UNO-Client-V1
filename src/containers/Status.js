@@ -9,8 +9,8 @@ class Status extends PureComponent {
   render() {
 
     return (
-        <div className="Board">
-
+        <div className="Status">
+            Status
         </div>
     )
   }

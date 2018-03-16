@@ -10,7 +10,7 @@ class PlayerBox extends PureComponent {
 
     return (
         <div className="PlayerBox" id="">
-          test
+          Player
         </div>
     )
   }

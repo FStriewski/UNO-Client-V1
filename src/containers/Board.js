@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import PlayerBox from './PlayerBox'
 import CurrentCard from '../components/CurrentCard'
 import Deck from '../components/Deck'
+import Hand from '../components/Hand'
+import Status from './Status'
 import '../style/Board.css'
 
 class Board extends PureComponent {
@@ -21,6 +23,10 @@ class Board extends PureComponent {
             <div style={{display:"flex", flexDirection: 'row'}}>
                 <CurrentCard/>
                 <Deck/>
+            </div>
+            <div style={{display:"flex", flexDirection: 'column'}}>
+                <Hand/>
+                <Status/>
             </div>
         </div>
     )
