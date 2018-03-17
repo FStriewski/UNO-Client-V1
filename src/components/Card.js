@@ -34,6 +34,6 @@ class Card extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ deck }) => ({ deck })
+const mapStateToProps = ({ cards }) => ({ cards })
 export default connect(mapStateToProps, {})(Card)
 

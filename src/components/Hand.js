@@ -13,7 +13,7 @@ class Hand extends PureComponent {
     // Map an array of player cards
     return (
         <div className="Hand" style={{display:"flex", flexDirection: 'row'}}>
-            {this.props.deck.initialState
+            {this.props.cards.initialState
                 .filter(card => card.location === "Hand")
                 .map( (card, index) => <Card key={index} color={card.color} number={card.value}   />)}
         </div>
@@ -21,5 +21,5 @@ class Hand extends PureComponent {
   }
 }
 
-const mapStateToProps = ({deck}) => ({deck})
+const mapStateToProps = ({cards}) => ({cards})
 export default connect(mapStateToProps, {  })(Hand)
