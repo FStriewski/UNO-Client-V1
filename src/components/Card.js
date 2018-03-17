@@ -10,38 +10,33 @@ class Card extends PureComponent {
     createGame: PropTypes.func.isRequired
   }
 
+    handleClick = () => {
+        this.props.updateLocation()
+        // if location === x, dispatch action y
+    }
 
-  handleClick = () => {
-      this.props.updateLocation()
-    // if location === x, dispatch action y
- }
+    classNames() {
+        const { color} = this.props
+        let classnames = ['Card']
+        classnames.push(`fill-${color}`)
+        return classnames.join(' ')
+    }
 
+    cardNumber(){
+            const { number, plus } = this.props
+            if (number) return this.props.number
+            if (plus) return `+${plus}`
+    }
+    
+    render() {
+        return (
+            <div className={this.classNames()} id={this.props.id}  onClick={this.handleClick} >
+                <p style={{fontSize: "20px"}}>{this.cardNumber()} </p>
+            </div>
+        )
+    }
+    }
 
- classNames() {
-    const { color} = this.props
-
-    let classnames = ['Card']
-    classnames.push(`fill-${color}`)
-
-    return classnames.join(' ')
-  }
-
-  cardNumber(){
-        const { number, plus } = this.props
-        if (number) return this.props.number
-        if (plus) return `+${plus}`
-  }
- 
-
-  render() {
-    return (
-        <div className={this.classNames()} id={this.props.cards.id}  onClick={this.handleClick} >
-            <p style={{fontSize: "20px"}}>{this.cardNumber()} </p>
-        </div>
-    )
-  }
-}
-
-const mapStateToProps = ({ cards }) => ({ cards })
+const mapStateToProps = ({  }) => ({  })
 export default connect(mapStateToProps, {updateLocation})(Card)
 
