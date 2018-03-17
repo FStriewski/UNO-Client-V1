@@ -94,6 +94,16 @@ export default function(state = initialState, action = {}) {
               }
               return {...x, location: "CurrentCard"}
 
+
+              case "Player2Hand":              // Blueprint for PlayerXHand
+              if(x.id !== action.payload.id && x.location !== "CurrentCard" ){
+                return x
+              }
+              if( x.id !== action.payload.id && x.location === "CurrentCard" ){
+                return {...x, location: "Deck"}
+              }
+              return {...x, location: "CurrentCard"}
+
               default:
               return {...x}
             }
