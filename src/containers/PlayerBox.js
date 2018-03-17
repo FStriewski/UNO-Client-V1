@@ -10,7 +10,22 @@ class PlayerBox extends PureComponent {
 
     return (
         <div className="PlayerBox" id="">
-          Player
+
+          <div className="flex-container">
+            <div className="photo-container">
+              <img
+                src="http://www.christies.com/media-library/images/features/articles/2016/01/11/david-bowie/Brian-Duffy-David-Bowie-as-Aladdin-Sane-1973.jpg"
+                className="player-photo"
+              />
+            </div>
+
+            <div className="info-container">
+              <h2>Player 1{this.props.username}</h2>
+              <p>Location: {this.props.location}</p>
+              <p>Score: {this.props.score}</p>
+              <p>Remaining cards: {this.props.remaining}</p>
+            </div>
+          </div>
         </div>
     )
   }
