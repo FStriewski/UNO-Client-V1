@@ -3,14 +3,14 @@
 let initialState = [
        {id: 20,
         color: "green",
-        value: 1,
+        value: 2,
         plus: 0,
         location: "CurrentCard"
        } , 
 
        {id: 0,
         color: "red",
-        value: 1,
+        value: 3,
         plus: 0,
         location: "Deck"
        },
@@ -38,7 +38,7 @@ let initialState = [
 
        {id: 10,
         color: "blue",
-        value: 1,
+        value: 7,
         plus: 0,
         location: "Hand"
        },

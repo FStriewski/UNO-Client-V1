@@ -20,7 +20,8 @@ class CurrentCard extends PureComponent {
         <div className="CurrentCard" onClick={this.handleClick}>
             {this.props.cards.initialState
                 .filter(card => card.location === "CurrentCard")
-                .map( (card, index) => <Card key={index} color={card.color} number={card.value}   />)}
+                .map( (card, index) => <Card key={index} color={card.color} number={card.value} plus={card.plus}  
+                />)}
         </div>
     )
   }
