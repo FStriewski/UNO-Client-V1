@@ -12,7 +12,7 @@ class Deck extends PureComponent {
 
     return (
         <div className="Deck" style={{display:"flex", flexDirection: 'row'}}>
-            {this.props.cards.initialState
+            {this.props.cards
                 .filter(card => card.location === "Deck")
                 .map( (card, index) => <Card key={index} color={card.color} number={card.value} plus={card.plus} location={card.location}
                    />)}

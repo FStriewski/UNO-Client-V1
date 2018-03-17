@@ -67,13 +67,15 @@ let initialState = [
    
 ]
 
-export default function(state = {initialState}, action = {}) {
+export default function(state = initialState, action = {}) {
 
     switch (action.type) {
-      case MOVE:
-        return {
-          state
-        }
+      case MOVE :
+      return state
+         .map((x) => {
+           if (x.id !== action.payload.id) return x
+           return x
+        })
       default:
         return state
       }
