@@ -5,7 +5,7 @@ let initialState = [
         color: "green",
         value: 1,
         plus: 0,
-        location: "Board"
+        location: "CurrentCard"
        } , 
 
        {id: 0,
@@ -40,33 +40,33 @@ let initialState = [
         color: "blue",
         value: 1,
         plus: 0,
-        location: "Player1"
+        location: "Hand"
        },
    
        {id: 11,
         color: "green",
         value: null,
         plus: 2,
-        location: "Player1"
+        location: "Hand"
        },
    
        {id: 12,
         color: "yellow",
         value: 6,
         plus: 0,
-        location: "Player1"
+        location: "Hand"
        },
    
        {id: 13,
         color: "black",
         value: null,
         plus: 0,
-        location: "Player1"
+        location: "Hand"
        }
    
 ]
 
-export default function(state = {}, action = {}) {
+export default function(state = {initialState}, action = {}) {
 
     switch (action.type) {
       case 'SOMETHING':
