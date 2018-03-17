@@ -7,9 +7,9 @@ class PlayerBox extends PureComponent {
   }
 
   render() {
-
+    const player = this.props
     return (
-        <div className="PlayerBox" id="">
+        <div className="PlayerBox currentTurn" id="">
 
           <div className="flex-container">
             <div className="photo-container">

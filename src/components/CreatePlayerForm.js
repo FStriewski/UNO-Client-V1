@@ -19,6 +19,9 @@ class CreatePlayerForm extends PureComponent {
 	render() {
 		return (
 			<form onSubmit={this.handleSubmit}>
+
+				<h1>Please Create Player</h1>
+
 				<div>
 					<label htmlFor="username">Username:</label>
 					<input name="username" id="username" value={

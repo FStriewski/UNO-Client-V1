@@ -5,6 +5,7 @@ import CurrentCard from '../components/CurrentCard'
 import Deck from '../components/Deck'
 import Hand from '../components/Hand'
 import Status from './Status'
+import CreatePlayerForm from '../components/CreatePlayerForm'
 import '../style/Board.css'
 
 class Board extends PureComponent {
@@ -28,6 +29,7 @@ class Board extends PureComponent {
                 <Hand/>
                 <Status/>
             </div>
+            <CreatePlayerForm />
         </div>
     )
   }
