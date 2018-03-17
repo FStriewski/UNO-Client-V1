@@ -71,11 +71,24 @@ export default function(state = initialState, action = {}) {
 
     switch (action.type) {
       case MOVE :
-      return state
-         .map((x) => {
-           if (x.id !== action.payload.id) return x
-           return x
-        })
+      return state.map((x) => { 
+        if(x.id != action.payload.id){
+          return x
+        } 
+        return {...x, location2: action.payload.location}})
+      //.concat({id: action.payload.id})
+
+        // .map((x) => {
+          // x
+          //  if (x.id !== action.payload.id) return x
+          //  switch (action.payload.location){
+          //   case "CurrentCard": return {...x, location: "Deck"}
+          //   // case "CurrentCard": return
+          //   // case "CurrentCard": return
+             
+          //  }
+          
+      //  })
       default:
         return state
       }
