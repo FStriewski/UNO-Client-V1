@@ -77,9 +77,11 @@ export default function(state = initialState, action = {}) {
         } 
           switch (action.payload.location) {
             case "CurrentCard": 
-              return {...x, location: "Deck"}
+              return {...x, location: "Deck"}    // Breaks if not replaced by new card
             case "Hand": 
-              return {...x, location: "Deck"}
+              return {...x, location: "CurrentCard"}
+            case "Deck": 
+              return {...x, location: "Hand"}
             default:
               return {...x}
             }
