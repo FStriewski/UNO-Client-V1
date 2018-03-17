@@ -1,8 +1,10 @@
-import {TODECK} from './types'
+import {MOVE} from './types'
 
 
-export const updateLocation = (location) =>
-({
-    type: TODECK,
-    payload:location
-})
+export const updateLocation = (x) => {
+    console.log(x)
+    return {
+        type: MOVE,
+        payload: x
+    }
+ }

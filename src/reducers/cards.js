@@ -1,4 +1,5 @@
 //import {  } from '../actions/types'
+import {MOVE} from '../actions/types'
 
 let initialState = [
        {id: 20,
@@ -69,7 +70,7 @@ let initialState = [
 export default function(state = {initialState}, action = {}) {
 
     switch (action.type) {
-      case 'SOMETHING':
+      case MOVE:
         return {
           state
         }

@@ -15,7 +15,7 @@ class Hand extends PureComponent {
         <div className="Hand" style={{display:"flex", flexDirection: 'row'}}>
             {this.props.cards.initialState
                 .filter(card => card.location === "Hand")
-                .map( (card, index) => <Card key={index} color={card.color} number={card.value} plus={card.plus}  
+                .map( (card, index) => <Card key={index} color={card.color} number={card.value} plus={card.plus} location={card.location}
                 />)}
         </div>
     )
