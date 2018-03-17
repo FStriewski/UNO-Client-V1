@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 import Card from './Card'
 import '../style/CurrentCard.css'
 
@@ -69,4 +70,8 @@ class CurrentCard extends PureComponent {
   }
 }
 
-export default CurrentCard
+
+const mapStateToProps = ({deck}) => (
+    {deck: deck // filter needs to go here
+    })
+export default connect(mapStateToProps, {  })(CurrentCard)
