@@ -84,7 +84,7 @@ export default function(state = initialState, action = {}) {
               } 
               return {...x, location: "Hand"}
 
-            
+            // Add more game logic here
             case "Hand":              // Move to current card and move last current card to deck
               if(x.id !== action.payload.id && x.location !== "CurrentCard" ){
                 return x
