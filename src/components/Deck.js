@@ -11,8 +11,8 @@ class Deck extends PureComponent {
   render() {
 
     return (
-        <div className="Deck">
-            {this.props.deck.initialState
+        <div className="Deck" style={{display:"flex", flexDirection: 'row'}}>
+            {this.props.cards.initialState
                 .filter(card => card.location === "Deck")
                 .map( (card, index) => <Card key={index} color={card.color} number={card.value}
                    />)}
@@ -22,5 +22,5 @@ class Deck extends PureComponent {
 }
 
 
-const mapStateToProps = ({deck}) => ({deck})
+const mapStateToProps = ({cards}) => ({cards})
 export default connect(mapStateToProps, {  })(Deck)

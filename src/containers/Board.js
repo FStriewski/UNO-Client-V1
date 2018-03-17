@@ -24,7 +24,7 @@ class Board extends PureComponent {
                 <CurrentCard/>
                 <Deck/>
             </div>
-            <div style={{display:"flex", flexDirection: 'column'}}>
+            <div >
                 <Hand/>
                 <Status/>
             </div>

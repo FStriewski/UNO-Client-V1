@@ -27,7 +27,7 @@ class Card extends PureComponent {
 
   render() {
     return (
-        <div className={this.classNames()} id={this.props.deck.id}  onClick={this.handleClick} >
+        <div className={this.classNames()} id={this.props.cards.id}  onClick={this.handleClick} >
             <p style={{fontSize: "20px"}}>{this.props.number} </p>
         </div>
     )

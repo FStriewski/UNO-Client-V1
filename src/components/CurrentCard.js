@@ -18,7 +18,7 @@ class CurrentCard extends PureComponent {
 
     return (
         <div className="CurrentCard" onClick={this.handleClick}>
-            {this.props.deck.initialState
+            {this.props.cards.initialState
                 .filter(card => card.location === "CurrentCard")
                 .map( (card, index) => <Card key={index} color={card.color} number={card.value}   />)}
         </div>
@@ -27,5 +27,5 @@ class CurrentCard extends PureComponent {
 }
 
 
-const mapStateToProps = ({deck}) => ({deck})
+const mapStateToProps = ({cards}) => ({cards})
 export default connect(mapStateToProps, {  })(CurrentCard)

@@ -1,5 +1,5 @@
-import deck from './deck'
+import cards from './cards'
 
 export default {
-    deck,
+    cards,
 }
