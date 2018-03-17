@@ -33,7 +33,7 @@ let initialState = [
        {id: 3,
         color: "black",
         value: null,
-        plus: 0,
+        plus: 4,
         location: "Deck"
        },
 
@@ -72,17 +72,29 @@ export default function(state = initialState, action = {}) {
     switch (action.type) {
       case MOVE :
       return state.map((x) => { 
-        if(x.id != action.payload.id){
-          return x
-        } 
+
           switch (action.payload.location) {
-            case "CurrentCard": 
-              return {...x, location: "Deck"}    // Breaks if not replaced by new card
-            case "Hand": 
-              return {...x, location: "CurrentCard"}
-            case "Deck": 
+
+            case "CurrentCard":       // Current Card should not be replaced by hand
+              return x
+
+            case "Deck":              // Move to Hand
+              if(x.id != action.payload.id && x.location ){
+                return x
+              } 
               return {...x, location: "Hand"}
-            default:
+
+            
+            case "Hand":              // Move to current card and move last current card to deck
+              if(x.id !== action.payload.id && x.location !== "CurrentCard" ){
+                return x
+              }
+              if( x.id !== action.payload.id && x.location === "CurrentCard" ){
+                return {...x, location: "Deck"}
+              }
+              return {...x, location: "CurrentCard"}
+
+              default:
               return {...x}
             }
 

@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import Card from './Card'
 import '../style/CurrentCard.css'
 
-import { updateLocation } from '../actions/updateLocation'
+
 
 class CurrentCard extends PureComponent {
   static propTypes = {
@@ -29,4 +29,4 @@ class CurrentCard extends PureComponent {
 
 
 const mapStateToProps = ({cards}) => ({cards: cards.filter(card => card.location === "CurrentCard")})
-export default connect(mapStateToProps, {updateLocation  })(CurrentCard)
+export default connect(mapStateToProps, {  })(CurrentCard)
