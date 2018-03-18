@@ -8,7 +8,10 @@ import '../style/Card.css'
  class Card extends PureComponent {
 
     handleClick = () => {
-        this.props.updateLocation(this.props.id, this.props.location)
+        // Allow drawing of cards from Deck at any time
+        if(this.props.location === "Deck") {
+            this.props.updateLocation(this.props.id, this.props.location)
+        }
       }
 
     classNames() {
