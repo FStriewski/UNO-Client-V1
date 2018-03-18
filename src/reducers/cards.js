@@ -126,14 +126,20 @@ export default function(state = initialState, action = {}) {
       case DRAWSINGLE :
         return state.map((x) => {
           if(x.id !== action.payload.id ){
-                return x
-              }
-          // Moves ALL Deck cards to hand:
+            return x
+          }
              return {...x, location: "Hand"}
+        })
 
+      case DRAWCARDS:
+        return state.map((x) => {
+          if(x.id !== action.payload.id ){
+            return x
+          }
+          // Needs to be changed to playerXhand
+          return {...x, location: "Hand"}
+        })
 
-
-       })
       
       default:
         return state
