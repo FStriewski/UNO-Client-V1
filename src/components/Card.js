@@ -9,6 +9,7 @@ import '../style/Card.css'
 
     handleClick = () => {
         // Allow drawing of cards from Deck at any time
+        console.log(this.props.cards)
         if(this.props.location === "Deck") {
             this.props.updateLocation(this.props.id, this.props.location)
         }
@@ -36,6 +37,8 @@ import '../style/Card.css'
     }
     }
 
-// const mapStateToProps = ({  }) => ({  })
- export default connect(null, { updateLocation })(Card)
+
+// Re-add state to component to be able to access the current card for game logic
+ const mapStateToProps = ({cards}) => ({cards: cards.filter(card => card.location === "CurrentCard")})
+ export default connect(mapStateToProps, { updateLocation })(Card)
 
