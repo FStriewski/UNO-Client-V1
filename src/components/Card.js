@@ -2,6 +2,7 @@ import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { playCardFromHand } from '../actions/updateLocation'
+import { drawCards } from '../actions/draw'
 import '../style/Card.css'
 
 
@@ -25,7 +26,7 @@ import '../style/Card.css'
         let arr = deck.map( x => x.id).slice(0, plusVal) 
   
         console.log(arr)
-        //let randid = arr[Math.floor(Math.random() * arr.length)]
+        this.props.drawCards(arr)
         }
 
     classNames() {
@@ -48,9 +49,9 @@ import '../style/Card.css'
             </div>
         )
     }
-    }
+}
 
 // Re-add state to component to be able to access the current card for game logic
  const mapStateToProps = ({cards}) => ({currentCard: cards.filter(card => card.location === "CurrentCard"), deck: cards.filter(card => card.location === "Deck")})
- export default connect(mapStateToProps, { playCardFromHand })(Card)
+ export default connect(mapStateToProps, { playCardFromHand, drawCards })(Card)
 

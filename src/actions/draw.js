@@ -7,10 +7,10 @@ export const drawSingleCard = (id) => ({
     }
 })
 
-export const drawCards = (id) => ({
+export const drawCards = (arr) => ({
     type: DRAWCARDS,
-    payload:{
-        id
-    }
+    payload:
+        arr
+    
 })
  

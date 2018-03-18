@@ -133,11 +133,10 @@ export default function(state = initialState, action = {}) {
 
       case DRAWCARDS:
         return state.map((x) => {
-          if(x.id !== action.payload.id ){
-            return x
+          if(action.payload.includes(x.id) ){
+            return {...x, location: "Hand"}
           }
-          // Needs to be changed to playerXhand
-          return {...x, location: "Hand"}
+          return x
         })
 
       

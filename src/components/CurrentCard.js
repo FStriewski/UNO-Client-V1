@@ -1,7 +1,6 @@
 import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { drawCards } from '../actions/draw'
 import Card from './Card'
 import '../style/CurrentCard.css'
 
@@ -33,7 +32,6 @@ class CurrentCard extends PureComponent {
 
   render() {
     let card = this.props.cards[0]
-   // if (card.plus) this.isPlusCard(card.plus)
 
     return (
         <div className="CurrentCard">
@@ -50,4 +48,4 @@ class CurrentCard extends PureComponent {
 
 
 const mapStateToProps = ({cards}) => ({cards: cards.filter(card => card.location === "CurrentCard"), deck: cards.filter(card => card.location === "Deck")})
-export default connect(mapStateToProps, { drawCards })(CurrentCard)
+export default connect(mapStateToProps, { })(CurrentCard)
