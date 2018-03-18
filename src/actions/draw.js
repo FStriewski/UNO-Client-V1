@@ -1,10 +1,9 @@
 import {DRAW} from './types'
 
-
-export const updateLocation = () => ({
-         type: DRAW,
-         payload:{
-        
-            }
-     })
+export const drawCards = (x) => ({
+    type: DRAW,
+    payload:{
+        numberOfCards: x
+    }
+})
  

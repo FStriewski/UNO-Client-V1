@@ -1,16 +1,16 @@
 import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import Card from './Card'
+//import Card from './Card'
+import { drawCards } from '../actions/draw'
 import '../style/Deck.css'
 
 class Deck extends PureComponent {
   static propTypes = {
   }
 
-  handleClick () {
-    console.log("click");
-    
+  handleClick = () => {
+    this.props.drawCards(1) 
   }
 
   render() {
@@ -28,7 +28,7 @@ class Deck extends PureComponent {
 }
 
 const mapStateToProps = ({cards}) => ({cards: cards.filter(card => card.location === "Deck")})
-export default connect(mapStateToProps, {  })(Deck)
+export default connect(mapStateToProps, { drawCards })(Deck)
 
 // Uncomment to check status:
 // const mapStateToProps = ({cards}) => ({cards: cards.filter(card => card.location === "Deck")})

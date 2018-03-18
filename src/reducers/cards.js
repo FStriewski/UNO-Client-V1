@@ -1,5 +1,5 @@
 //import {  } from '../actions/types'
-import {MOVE} from '../actions/types'
+import {MOVE, DRAW} from '../actions/types'
 
 let initialState = [
        {id: 20,
@@ -107,8 +107,19 @@ export default function(state = initialState, action = {}) {
               default:
               return {...x}
             }
-
           })
+
+      case DRAW :
+        return state.map((x) => {
+          if(x.location !== "Deck" ){
+                return x
+              }
+          // Moves ALL Deck cards to hand:
+              return {...x, location: "Hand"}
+
+
+
+       })
       
       default:
         return state
