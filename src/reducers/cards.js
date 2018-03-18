@@ -45,7 +45,7 @@ let initialState = [
        },
 
        {id: 5,
-        color: "red",
+        color: "yellow",
         value: 2,
         plus: null,
         location: "Deck"

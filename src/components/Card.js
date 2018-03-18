@@ -9,19 +9,11 @@ import '../style/Card.css'
 
     handleClick = () => {
         let currentCard = this.props.cards[0]
-        let playCard = this.props.updateLocation(this.props.id, this.props.location)
-        //console.log(this.props.cards[0].color)
-
-        // Allow drawing of cards from Deck at any time
-        if(this.props.location === "Deck") {
-            //this.props.updateLocation(this.props.id, this.props.location)
-            playCard 
-        }
 
         // Allow to play a card from hand if color or value match or if card is black
         if(this.props.color === currentCard.color || this.props.number === currentCard.value || this.props.color === "black"){
-            //this.props.updateLocation(this.props.id, this.props.location)
-            playCard 
+            this.props.updateLocation(this.props.id, this.props.location)
+            
         }
       }
 
