@@ -1,5 +1,5 @@
 //import {  } from '../actions/types'
-import {MOVE, DRAW} from '../actions/types'
+import {MOVE, DRAWSINGLE, DRAWCARDS} from '../actions/types'
 
 let initialState = [
        {id: 20,
@@ -123,7 +123,7 @@ export default function(state = initialState, action = {}) {
             }
           })
 
-      case DRAW :
+      case DRAWSINGLE :
         return state.map((x) => {
           if(x.id !== action.payload.id ){
                 return x

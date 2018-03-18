@@ -1,2 +1,3 @@
 export const MOVE = 'MOVE'
-export const DRAW = 'DRAW'
+export const DRAWSINGLE = 'DRAWSINGLE'
+export const DRAWCARDS = 'DRAWCARDS'

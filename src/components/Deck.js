@@ -2,7 +2,7 @@ import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 //import Card from './Card'
-import { drawCards } from '../actions/draw'
+import { drawSingleCard } from '../actions/draw'
 import '../style/Deck.css'
 
 class Deck extends PureComponent {
@@ -13,7 +13,7 @@ class Deck extends PureComponent {
     let deck = this.props.cards
     let x = Math.floor(Math.random() * deck.length)
     if(!x) return
-    this.props.drawCards(deck[x].id) 
+    this.props.drawSingleCard(deck[x].id) 
   }
 
   render() {
@@ -31,7 +31,7 @@ class Deck extends PureComponent {
 }
 
 const mapStateToProps = ({cards}) => ({cards: cards.filter(card => card.location === "Deck")})
-export default connect(mapStateToProps, { drawCards })(Deck)
+export default connect(mapStateToProps, { drawSingleCard })(Deck)
 
 // Uncomment to check status:
 // const mapStateToProps = ({cards}) => ({cards: cards.filter(card => card.location === "Deck")})
