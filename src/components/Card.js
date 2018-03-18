@@ -16,7 +16,8 @@ import '../style/Card.css'
             this.props.updateLocation(this.props.id, this.props.location)
         }
 
-        if(this.props.color === currentCard.color || this.props.number === currentCard.value){
+        // Allow to play a card from hand if color or value match or if card is black
+        if(this.props.color === currentCard.color || this.props.number === currentCard.value || this.props.color === "black"){
             this.props.updateLocation(this.props.id, this.props.location)
         }
       }
