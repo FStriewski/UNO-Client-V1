@@ -34,7 +34,7 @@ let initialState = [
         color: "black",
         value: null,
         plus: 4,
-        location: "Deck"
+        location: "Hand"
        },
 
        {id: 4,
@@ -76,7 +76,7 @@ let initialState = [
         color: "black",
         value: null,
         plus: 0,
-        location: "Hand"
+        location: "Deck"
        }
    
 ]

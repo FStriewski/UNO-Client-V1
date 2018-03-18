@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { updateLocation } from '../actions/updateLocation'
+import { playCardFromHand } from '../actions/updateLocation'
 import '../style/Card.css'
 
 
@@ -12,24 +12,21 @@ import '../style/Card.css'
 
         // Allow to play a card from hand if color or value match or if card is black
         if(this.props.color === currentCard.color || this.props.number === currentCard.value || this.props.color === "black"){
-            this.props.updateLocation(this.props.id, this.props.location)
+            this.props.playCardFromHand(this.props.id, this.props.location)
 
-            // if (this.props.plus === 2 || this.props.plus === 4){
-            //     // console.log(this.props.plus);
-
-            //     let counter = this.props.plus 
-
-            //     while (counter > 0){
-            //      let x = Math.floor(Math.random() * deck.length)
-            //      console.log(x)
-            //      if(!x) return
-            //      this.props.drawCards(deck[x].id)() 
-            //      counter--
-            //     }
-            //     // this.props.drawCards(deck[x].id) 
-            // }
+            if(this.props.plus > 0) this.isPlusCard(this.props.plus) 
         }
       }
+
+      isPlusCard = (plusVal) => {
+
+        // needs a proper Rand function
+        let deck =  this.props.deck
+        let arr = deck.map( x => x.id).slice(0, plusVal) 
+  
+        console.log(arr)
+        //let randid = arr[Math.floor(Math.random() * arr.length)]
+        }
 
     classNames() {
         const { color} = this.props
@@ -54,6 +51,6 @@ import '../style/Card.css'
     }
 
 // Re-add state to component to be able to access the current card for game logic
- const mapStateToProps = ({cards}) => ({currentCard: cards.filter(card => card.location === "CurrentCard")})
- export default connect(mapStateToProps, { updateLocation })(Card)
+ const mapStateToProps = ({cards}) => ({currentCard: cards.filter(card => card.location === "CurrentCard"), deck: cards.filter(card => card.location === "Deck")})
+ export default connect(mapStateToProps, { playCardFromHand })(Card)
 

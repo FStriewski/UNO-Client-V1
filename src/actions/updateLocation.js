@@ -1,7 +1,7 @@
 import {MOVE} from './types'
 
 
-export const updateLocation = (id,location) => ({
+export const playCardFromHand = (id,location) => ({
          type: MOVE,
          payload:{
             id,
