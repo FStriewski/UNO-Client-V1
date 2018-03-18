@@ -78,11 +78,11 @@ export default function(state = initialState, action = {}) {
             case "CurrentCard":       // Current Card should not be replaced by hand
               return x
 
-            case "Deck":              // Move to Hand
-              if(x.id !== action.payload.id ){
-                return x
-              } 
-              return {...x, location: "Hand"}
+            // case "Deck":              // Uncomment to test deck. Now handled by draw
+            //   if(x.id !== action.payload.id ){
+            //     return x
+            //   } 
+            //   return {...x, location: "Hand"}
 
             // Add more game logic here
             case "Hand":              // Move to current card and move last current card to deck

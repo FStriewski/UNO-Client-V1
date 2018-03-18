@@ -8,22 +8,31 @@ class Deck extends PureComponent {
   static propTypes = {
   }
 
+  handleClick () {
+    console.log("click");
+    
+  }
+
   render() {
 
     return (
+        // Uncomment to check status:
         // <div className="Deck" style={{display:"flex", flexDirection: 'row'}}>
         //     {this.props.cards   
         //         .map( (card, index) => <Card key={index} color={card.color} number={card.value} plus={card.plus} location={card.location} id={card.id} 
         //            />)}
         // </div>
-        <div className="Deck"></div>
+        <div className="Deck" onClick = {this.handleClick} ></div>
     )
   }
 }
 
-
 const mapStateToProps = ({cards}) => ({cards: cards.filter(card => card.location === "Deck")})
 export default connect(mapStateToProps, {  })(Deck)
+
+// Uncomment to check status:
+// const mapStateToProps = ({cards}) => ({cards: cards.filter(card => card.location === "Deck")})
+// export default connect(mapStateToProps, {  })(Deck)
 
 
 // Click on deck:
