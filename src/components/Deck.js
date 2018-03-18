@@ -10,7 +10,10 @@ class Deck extends PureComponent {
   }
 
   handleClick = () => {
-    this.props.drawCards(1) 
+    let deck = this.props.cards
+    let x = Math.floor(Math.random() * deck.length)
+    if(!x) return
+    this.props.drawCards(deck[x].id) 
   }
 
   render() {

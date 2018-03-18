@@ -1,9 +1,9 @@
 import {DRAW} from './types'
 
-export const drawCards = (x) => ({
+export const drawCards = (id) => ({
     type: DRAW,
     payload:{
-        numberOfCards: x
+        id
     }
 })
  

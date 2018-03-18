@@ -37,6 +37,20 @@ let initialState = [
         location: "Deck"
        },
 
+       {id: 4,
+        color: "red",
+        value: 6,
+        plus: 4,
+        location: "Deck"
+       },
+
+       {id: 5,
+        color: "red",
+        value: 2,
+        plus: null,
+        location: "Deck"
+       },
+
        {id: 10,
         color: "blue",
         value: 7,
@@ -111,11 +125,11 @@ export default function(state = initialState, action = {}) {
 
       case DRAW :
         return state.map((x) => {
-          if(x.location !== "Deck" ){
+          if(x.id !== action.payload.id ){
                 return x
               }
           // Moves ALL Deck cards to hand:
-              return {...x, location: "Hand"}
+             return {...x, location: "Hand"}
 
 
 
