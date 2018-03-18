@@ -79,7 +79,7 @@ export default function(state = initialState, action = {}) {
               return x
 
             case "Deck":              // Move to Hand
-              if(x.id != action.payload.id && x.location ){
+              if(x.id !== action.payload.id ){
                 return x
               } 
               return {...x, location: "Hand"}
