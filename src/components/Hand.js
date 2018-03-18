@@ -22,5 +22,5 @@ class Hand extends PureComponent {
   }
 }
 
-const mapStateToProps = ({cards}) => ({cards: cards.filter(card => card.location === "Hand")})
+const mapStateToProps = ({cards}) => ({cards: cards.filter(card => card.location === "Hand"), currentCard: cards.filter(card => card.location === "currentCard") })
 export default connect(mapStateToProps, {  })(Hand)

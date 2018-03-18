@@ -43,7 +43,6 @@ import '../style/Card.css'
     }
     }
 
-
 // Re-add state to component to be able to access the current card for game logic
  const mapStateToProps = ({cards}) => ({cards: cards.filter(card => card.location === "CurrentCard")})
  export default connect(mapStateToProps, { updateLocation })(Card)
