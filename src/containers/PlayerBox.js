@@ -7,10 +7,24 @@ class PlayerBox extends PureComponent {
   }
 
   render() {
-
     return (
-        <div className="PlayerBox" id="">
-          Player
+        <div className="PlayerBox currentTurn" id="">
+
+          <div className="flex-container">
+            <div className="photo-container">
+              <img
+                src={this.props.image}
+                className="player-photo"
+              />
+            </div>
+
+            <div className="info-container">
+              <h2>{this.props.username}</h2>
+              <p>Location: {this.props.location}</p>
+              <p>Score: {this.props.score}</p>
+              <p>Remaining cards: {this.props.remaining}</p>
+            </div>
+          </div>
         </div>
     )
   }
