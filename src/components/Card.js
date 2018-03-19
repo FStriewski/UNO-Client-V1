@@ -19,15 +19,23 @@ import '../style/Card.css'
         }
       }
 
-      isPlusCard = (plusVal) => {
+    isPlusCard = (plusVal) => {
 
-        // needs a proper Rand function
         let deck =  this.props.deck
-        let arr = deck.map( x => x.id).slice(0, plusVal) 
-  
-        console.log(arr)
-        this.props.drawCards(arr)
-        }
+        let deckIds = deck.map( x => x.id) 
+        let drawIds = []
+        let el;
+
+        let rand = (x) => {           
+            while (drawIds.length < x && drawIds.length < deckIds.length){
+                el =  deckIds[Math.floor(Math.random() * deckIds.length)]
+                if(!drawIds.includes(el)){drawIds.push(el)}
+            }
+            return drawIds
+        } 
+        //console.log(arr)
+        this.props.drawCards(rand(plusVal))
+    }
 
     classNames() {
         const { color} = this.props
