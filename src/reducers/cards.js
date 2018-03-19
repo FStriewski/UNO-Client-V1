@@ -7,7 +7,7 @@ let initialState = [
         value: 2,
         plus: 0,
         location: "CurrentCard"
-       } , 
+       } ,
 
        {id: 0,
         color: "red",
@@ -15,21 +15,21 @@ let initialState = [
         plus: 0,
         location: "Deck"
        },
-   
+
        {id: 1,
         color: "blue",
         value: null,
         plus: 2,
         location: "Deck"
        },
-   
+
        {id: 2,
         color: "green",
         value: 6,
         plus: 0,
         location: "Deck"
        },
-   
+
        {id: 3,
         color: "black",
         value: null,
@@ -57,41 +57,37 @@ let initialState = [
         plus: 0,
         location: "Hand"
        },
-   
+
        {id: 11,
         color: "green",
         value: null,
         plus: 2,
         location: "Hand"
        },
-   
+
        {id: 12,
         color: "yellow",
         value: 6,
         plus: 0,
         location: "Hand"
        },
-   
+
        {id: 13,
         color: "black",
         value: null,
         plus: 0,
         location: "Deck"
        }
-   
+
 ]
 
 export default function(state = initialState, action = {}) {
 
     switch (action.type) {
       case MOVE :
-      return state.map((x) => { 
+      return state.map((x) => {
 
           switch (action.payload.location) {
-
-            case "CurrentCard":  // Current Card should never be replaced manually
-              return x
-
 
             case "Hand":    // Move to current card and move last current card to deck
               if(x.id !== action.payload.id && x.location !== "CurrentCard" ){
@@ -113,9 +109,9 @@ export default function(state = initialState, action = {}) {
               return {...x, location: "CurrentCard"}
 
               default:
-              return {...x}
+              return x
             }
-          })
+      })
 
       case DRAWSINGLE :
         return state.map((x) => {

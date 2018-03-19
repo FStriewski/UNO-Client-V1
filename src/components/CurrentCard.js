@@ -13,12 +13,20 @@ class CurrentCard extends PureComponent {
 
     return (
         <div className="CurrentCard">
-          <Card color={card.color} number={card.value} plus={card.plus} location={card.location} id={card.id} 
+          <Card color={card.color}
+            number={card.value}
+            plus={card.plus}
+            location={card.location}
+            id={card.id}
           />
         </div>
     )
   }
 }
 
-const mapStateToProps = ({cards}) => ({cards: cards.filter(card => card.location === "CurrentCard"), deck: cards.filter(card => card.location === "Deck")})
+const mapStateToProps = ({cards}) => (
+  {
+    cards: cards.filter(card => card.location === "CurrentCard"),
+    deck: cards.filter(card => card.location === "Deck")
+  })
 export default connect(mapStateToProps, { })(CurrentCard)
