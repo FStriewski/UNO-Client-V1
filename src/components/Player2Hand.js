@@ -4,16 +4,15 @@ import { connect } from 'react-redux'
 import Card from './Card'
 import '../style/Hand.css'
 
-// Replace Hand by Player1Hand after merging branch
 
-class Hand extends PureComponent {
+class Player2Hand extends PureComponent {
   static propTypes = {
   }
 
   render() {
 
     return (
-        <div className="Hand" style={{display:"flex", flexDirection: 'row'}}>
+        <div className="Player2Hand" style={{display:"flex", flexDirection: 'row'}}>
             {this.props.cards
                 .map( (card, index) => <Card key={index} color={card.color} number={card.value} plus={card.plus} location={card.location} id={card.id} 
                 />)}
@@ -22,5 +21,5 @@ class Hand extends PureComponent {
   }
 }
 
-const mapStateToProps = ({cards}) => ({cards: cards.filter(card => card.location === "Hand"), currentCard: cards.filter(card => card.location === "currentCard") })
+const mapStateToProps = ({cards}) => ({cards: cards.filter(card => card.location === "Player2Hand")})
 export default connect(mapStateToProps, {  })(Hand)

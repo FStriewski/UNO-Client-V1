@@ -1,4 +1,5 @@
-import deck from './deck'
+
+import cards from './cards'
 import players from './players'
 
 export default {

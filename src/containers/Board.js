@@ -15,7 +15,9 @@ class Board extends PureComponent {
   }
 
   render() {
+
     const players = this.props
+
     return (
         <div className="Board">
             board
@@ -39,7 +41,7 @@ class Board extends PureComponent {
                 <CurrentCard/>
                 <Deck/>
             </div>
-            <div style={{display:"flex", flexDirection: 'column'}}>
+            <div >
                 <Hand/>
                 <Status/>
             </div>

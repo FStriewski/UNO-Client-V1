@@ -1,4 +1,4 @@
-.Hand {
+.Player1Hand {
     border: 1px dashed black;
     border-radius: 3px;
     font-family: monospace;
@@ -13,4 +13,17 @@
     background-color: white
   }
 
- 
+  .Player2Hand {
+    border: 1px dashed black;
+    border-radius: 3px;
+    font-family: monospace;
+    font-size: 10px;
+    height: 175px;
+    
+    margin: 2%;
+    /* display: flex;
+    flex-direction: row; */
+    z-index: 55;
+
+    background-color: white
+  }
