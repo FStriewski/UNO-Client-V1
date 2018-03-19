@@ -12,7 +12,6 @@ class Board extends PureComponent {
   }
 
   render() {
-
     return (
         <div className="Board">
             board

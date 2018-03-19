@@ -21,6 +21,7 @@ import '../style/Card.css'
 
     isPlusCard = (plusVal) => {
 
+        // Assigns x random cards from deck or less if deck has less cards.
         let deck =  this.props.deck
         let deckIds = deck.map( x => x.id) 
         let drawIds = []
@@ -33,7 +34,6 @@ import '../style/Card.css'
             }
             return drawIds
         } 
-        //console.log(arr)
         this.props.drawCards(rand(plusVal))
     }
 
@@ -59,7 +59,6 @@ import '../style/Card.css'
     }
 }
 
-// Re-add state to component to be able to access the current card for game logic
  const mapStateToProps = ({cards}) => ({currentCard: cards.filter(card => card.location === "CurrentCard"), deck: cards.filter(card => card.location === "Deck")})
  export default connect(mapStateToProps, { playCardFromHand, drawCards })(Card)
 

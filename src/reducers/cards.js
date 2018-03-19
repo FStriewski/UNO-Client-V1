@@ -89,17 +89,11 @@ export default function(state = initialState, action = {}) {
 
           switch (action.payload.location) {
 
-            case "CurrentCard":       // Current Card should not be replaced by hand
+            case "CurrentCard":  // Current Card should never be replaced manually
               return x
 
-            // case "Deck":              // Uncomment to test deck. Now handled by draw
-            //   if(x.id !== action.payload.id ){
-            //     return x
-            //   } 
-            //   return {...x, location: "Hand"}
 
-            // Add more game logic here
-            case "Hand":              // Move to current card and move last current card to deck
+            case "Hand":    // Move to current card and move last current card to deck
               if(x.id !== action.payload.id && x.location !== "CurrentCard" ){
                 return x
               }
@@ -109,7 +103,7 @@ export default function(state = initialState, action = {}) {
               return {...x, location: "CurrentCard"}
 
 
-              case "Player2Hand":              // Blueprint for PlayerXHand
+              case "Player2Hand":  // Blueprint for PlayerXHand
               if(x.id !== action.payload.id && x.location !== "CurrentCard" ){
                 return x
               }
@@ -139,7 +133,6 @@ export default function(state = initialState, action = {}) {
           return x
         })
 
-      
       default:
         return state
       }
