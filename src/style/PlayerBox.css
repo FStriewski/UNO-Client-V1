@@ -31,6 +31,6 @@
   max-width: 100px;
 }
 
-.currentTurn {
+.turnStatus-true {
   border-color: orange;
 }

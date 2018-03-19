@@ -43,7 +43,6 @@ class Board extends PureComponent {
                 <Hand/>
                 <Status/>
             </div>
-            <CreatePlayerForm />
         </div>
     )
   }
